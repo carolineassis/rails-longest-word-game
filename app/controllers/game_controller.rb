@@ -3,6 +3,7 @@ require 'longest_word'
 class GameController < ApplicationController
   def game
     @grid = generate_grid(9)
+    session[:score] ||= 0
   end
 
   def score
@@ -11,5 +12,7 @@ class GameController < ApplicationController
     @start_time = Time.parse(params[:start_time])
     @end_time = Time.now
     @result = run_game(@attempt, @grid, @start_time, @end_time)
+
+    session[:score] += @result[:score]
   end
 end

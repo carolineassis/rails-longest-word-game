@@ -9,8 +9,10 @@
    <p>Your word: <%= @attempt %></p>
    <p>Time Taken to answer: <%= @result[:time] %></p>
    <p>Translation: <%= @result[:translation] %></p>
-   <p>Your score: <%= @result[:score] %></p>
+   <p>This game score: <%= @result[:score] %></p>
+   <p>Your total score: <%= session[:score] %></p>
    <p>Message: <%= @result[:message] %></p>
+   <h3><%= link_to "Play one more time!", root_path %></h3>
   </div>
 </div>
 </div>

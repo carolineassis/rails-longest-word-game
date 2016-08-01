@@ -1,18 +1,21 @@
 <!-- <h1>Game#score</h1>
 <p>Find me in app/views/game/score.html.erb</p>
 -->
-
-<div class="container">
- <div class="row">
-   <div class="col-xs-6 col-xs-offset-3 text-center">
-   <h3 style="color: grey">Now your result:</h3>
-   <p>Your word: <%= @attempt %></p>
-   <p>Time Taken to answer: <%= @result[:time] %></p>
-   <p>Translation: <%= @result[:translation] %></p>
-   <p>This game score: <%= @result[:score] %></p>
-   <p>Your total score: <%= session[:score] %></p>
-   <p>Message: <%= @result[:message] %></p>
-   <h3><%= link_to "Play one more time!", root_path %></h3>
-  </div>
-</div>
+<div class="wrapper">
+  <div class="container">
+   <div class="row">
+     <div class="col-xs-6 col-xs-offset-3 text-center">
+       <div class="card">
+         <h3 style="color: grey">Now your result:</h3>
+         <p>Your word: <%= @attempt %></p>
+         <p>Time Taken to answer: <%= @result[:time] %></p>
+         <p>Translation: <%= @result[:translation] %></p>
+         <p>This game score: <%= @result[:score].round %></p>
+         <p>Your total score: <%= session[:score].round %></p>
+         <p>Message: <%= @result[:message] %></p>
+         <h3><%= link_to "Play one more time!", root_path %></h3>
+       </div>
+     </div>
+   </div>
+ </div>
 </div>

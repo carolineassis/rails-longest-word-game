@@ -1,0 +1,21 @@
+<!-- <h1>Game#game</h1>
+<p>Find me in app/views/game/game.html.erb</p>
+-->
+
+<div class="container">
+ <div class="row">
+   <div class="col-xs-6 col-xs-offset-3 text-center">
+     <h2>Welcome to the longest word-game !</h2>
+     <h3 style="color: grey">Here is your grid:</h3>
+     <h1 style="color: #0097A7"><strong><%= @grid.join(" ") %></strong></h1>
+     <h3>What's your best shot?</h3>
+     <form action="/score" method="post" class="form-inline">
+       <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+       <input type="hidden" name="grid" value="<%= @grid.join("") %>">
+       <input type="hidden" name="start_time" value="<%= Time.now %>">
+       <input type="text" id="attempt" name="attempt" placeholder=""" class='form-control'>
+       <input type="submit" value="Go!" class='btn btn-warning'>
+     </form>
+   </div>
+ </div>
+</div>
